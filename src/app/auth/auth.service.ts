@@ -17,4 +17,14 @@ export class AuthService {
     return this.http.post<User>('/api/authenticate', { username, password });
   }
 
+
+
+  setToken(token: string) {
+    localStorage.setItem('authToken', token);
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('authToken');
+  }
+
 }
